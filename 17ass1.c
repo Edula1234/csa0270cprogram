@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Define the employee structure
 struct Employee {
     int employeeID;
     char name[50];
@@ -10,10 +9,10 @@ struct Employee {
 };
 
 int main() {
-    // Declare and initialize an employee structure variable
+    
     struct Employee emp;
 
-    // Accept employee details from the user
+
     printf("Enter Employee ID: ");
     scanf("%d", &emp.employeeID);
 
@@ -29,7 +28,7 @@ int main() {
     printf("Enter Salary: ");
     scanf("%f", &emp.salary);
 
-    // Display the employee details
+  
     printf("\nEmployee Details\n");
     printf("Employee ID: %d\n", emp.employeeID);
     printf("Name: %s\n", emp.name);
