@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_STUDENTS 10  // Maximum number of students
+#define MAX_STUDENTS 10  
 
-// Structure to represent student
 struct Student {
     int roll_no;
     char stud_name[50];
@@ -53,7 +52,6 @@ int main() {
         printf("Mark 3: ");
         scanf("%d", &students[i].mark3);
 
-        // Calculate total marks and average marks
         students[i].total_marks = students[i].mark1 + students[i].mark2 + students[i].mark3;
         students[i].average_marks = (float)students[i].total_marks / 3;
     }
@@ -64,7 +62,6 @@ int main() {
         printf("%d\t\t%s\t\t%d\t\t%.2f\n", students[i].roll_no, students[i].stud_name, students[i].total_marks, students[i].average_marks);
     }
 
-    // Sort the records in descending order of marks
     bubbleSort(students, n);
 
     printf("\nRecords after sorting:\n");
