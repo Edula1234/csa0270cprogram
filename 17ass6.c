@@ -3,20 +3,17 @@
 #include <string.h>
 
 #define MAX_BOOKS 100 
-#define MAX_AUTHOR_NAME_LENGTH 100 // Maximum length of author name
-#define MAX_BOOK_NAME_LENGTH 100 // Maximum length of book name
+#define MAX_AUTHOR_NAME_LENGTH 100 
+#define MAX_BOOK_NAME_LENGTH 100 
 
-// Structure to represent a book
 struct Book {
     char author[MAX_AUTHOR_NAME_LENGTH];
     char name[MAX_BOOK_NAME_LENGTH];
 };
 
-// Global variables
 struct Book library[MAX_BOOKS]; // Array to store books in the library
-int bookCount = 0; // Number of books currently in the library
+int bookCount = 0; 
 
-// Function to add a book to the library
 void addBook() {
     if (bookCount == MAX_BOOKS) {
         printf("Library is full! Cannot add more books.\n");
@@ -28,19 +25,18 @@ void addBook() {
     printf("Enter book author: ");
     fflush(stdin);
     fgets(newBook.author, MAX_AUTHOR_NAME_LENGTH, stdin);
-    newBook.author[strcspn(newBook.author, "\n")] = '\0'; // Remove trailing newline
+    newBook.author[strcspn(newBook.author, "\n")] = '\0'; 
 
     printf("Enter book name: ");
     fflush(stdin);
     fgets(newBook.name, MAX_BOOK_NAME_LENGTH, stdin);
-    newBook.name[strcspn(newBook.name, "\n")] = '\0'; // Remove trailing newline
+    newBook.name[strcspn(newBook.name, "\n")] = '\0'; 
 
     library[bookCount++] = newBook;
 
     printf("Book added successfully!\n");
 }
 
-// Function to display details of all books in the library
 void displayBooks() {
     if (bookCount == 0) {
         printf("No books in the library.\n");
@@ -56,13 +52,12 @@ void displayBooks() {
     }
 }
 
-// Function to list all books of a given author
 void listBooksByAuthor() {
     char authorName[MAX_AUTHOR_NAME_LENGTH];
     printf("Enter author name: ");
     fflush(stdin);
     fgets(authorName, MAX_AUTHOR_NAME_LENGTH, stdin);
-    authorName[strcspn(authorName, "\n")] = '\0'; // Remove trailing newline
+    authorName[strcspn(authorName, "\n")] = '\0'; 
 
     printf("Books by author '%s':\n", authorName);
     int found = 0;
@@ -79,7 +74,6 @@ void listBooksByAuthor() {
     }
 }
 
-// Function to display the count of books in the library
 void displayBookCount() {
     printf("Total books in the library: %d\n", bookCount);
 }
