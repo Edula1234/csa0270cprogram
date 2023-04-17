@@ -7,18 +7,15 @@ union Student {
 };
 
 int main() {
-    union Student student; // Declare a union variable of type Student
+    union Student student; 
 
-    // Prompt the user to enter the student's name
     printf("Enter student's name (up to 50 characters): ");
     fgets(student.name, sizeof(student.name), stdin);
-    student.name[strcspn(student.name, "\n")] = '\0'; // Remove the newline character
+    student.name[strcspn(student.name, "\n")] = '\0'; 
 
-    // Prompt the user to enter the student's GPA
     printf("Enter student's GPA: ");
     scanf("%f", &student.gpa);
 
-    // Print the student's name and GPA
     printf("Student's name: %s\n", student.name);
     printf("Student's GPA: %.2f\n", student.gpa);
 
