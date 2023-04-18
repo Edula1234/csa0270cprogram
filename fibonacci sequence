@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(){
+    int n,i;
+    long long int first=0, second=1, next;
+    
+    printf("Enter an integer:");
+    scanf("%d", &n);
+    
+    printf("fibonacci sequence:");
+    printf("%11d %11d ", first, second);
+    
+    for(i=1; i<=n; i++){
+        next = first + second;
+        printf("%11d", next);
+        first = second;
+        second = next;
+    }
+    printf("\n");
+    
+    return 0;
+}
+  
+   
